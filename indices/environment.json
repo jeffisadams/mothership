@@ -1,0 +1,16 @@
+{
+    "properties": {
+        "time": {
+            "type": "date"
+        },
+        "temp": {
+            "type": "float"
+        },
+        "location": {
+            "type": "keyword"
+        },
+        "humidity": {
+            "type": "float"
+        }
+    }
+}
