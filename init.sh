@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This basically follows the instructions on this blog
-https://medium.com/hepsiburadatech/setup-elasticsearch-7-x-cluster-on-raspberry-pi-asus-tinker-board-6a307851c801
+# https://medium.com/hepsiburadatech/setup-elasticsearch-7-x-cluster-on-raspberry-pi-asus-tinker-board-6a307851c801
 
 USER=$1
 HOST=$2
@@ -22,15 +22,15 @@ echo "Set sudo password for root\n"
 passwd
 
 ################################
-# Reset Hostname
-################################
-echo "$HOST\n" > /etc/hostname
-
-################################
 # Get latest
 ################################
 apt-get -y update
 apt-get -y upgrade
+
+################################
+# Reset Hostname
+################################
+echo "$HOST\n" > /etc/hostname
 
 ################################
 # User Creation

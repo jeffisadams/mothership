@@ -1,5 +1,8 @@
 #!/usr/bin/python
 
+
+# Credit gots to @sufinawaz
+
 import sys
 import Adafruit_DHT
 import requests
@@ -25,7 +28,7 @@ temperature = temperature * 9/5.0 + 32 # In Farenheit
 # print("Humidity is: ", humidity)
 
 data = {'time': int(round(time.time() * 1000)),
-        'location': '{room of the house}',
+        'location': '{location}',
         'temp': temperature,
         'humidity': humidity
 }
@@ -34,6 +37,4 @@ headers = {
     'Content-Type': 'application/json'
 }
 
-r = requests.post("http://{host}:9200/environment/_doc", data = json.dumps(data), headers = headers)
-
-print(r.text)
+r = requests.post("http://{es_host}:9200/environment/_doc", data = json.dumps(data), headers = headers)
